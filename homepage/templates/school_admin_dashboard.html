@@ -1,0 +1,181 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+<body>
+  <div class="page">
+
+<div class="register">
+  
+    <ul class="mytop-navi" >
+      <div>
+<img src="https://s3.amazonaws.com/shecodesio-production/candidates/avatars/000/033/437/medium/241109218_210010144486465_8044208400551764546_n.jpg?1658818757">
+<p style="color:white; margin-left:25%;">Admin</p>
+</div>
+
+
+    <li class=" nav-list"><a href="{% url 'grade1_course_list' %}">Dashboard</a></li>
+    <li class=" nav-list"><a href="{% url 'add_grade1_course' %}">Grades</a></li>
+
+    <li class=" nav-list"><a href="{% url 'grade2_course_list' %}">Students</a></li>
+    <li class=" nav-list"><a href="{% url 'add_grade2_course' %}">Schools</a></li>
+    
+    <li class=" nav-list"><a href="{% url 'grade3_course_list' %}">Schools admins</a></li>
+    <li class=" nav-list"><a href="{% url 'add_grade3_course' %}">Subjects</a></li>
+    <li class=" nav-list"><a href="{% url 'add_grade3_course' %}">Authors</a></li>
+
+
+
+
+</ul>
+</div>
+<div> 
+
+</div>
+<div class="heading">
+<h5>school Admin Dashboard</h5>
+</div>
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body" style="background-color:rgba(56,32,91);">
+        <h5 class="card-title"> <a  href="{% url 'grades' %}">Grades</a></h5>
+    </div>
+  </div>
+  <div class="card card1">
+    <div class="card-body"style="background-color:rgba(100,82,127);">
+        <h5 class="card-title"> <a  href="{% url 'grade1_course_list' %}">Students</a></h5>
+    </div>
+  </div>
+  <div class="card" >
+    <div class="card-body" style="background-color:rgba(70,32,125);">
+        <h5 class="card-title"> <a  href="{% url 'grade1_course_list' %}">School</a></h5>
+    </div>
+  </div>
+</div>
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body"   style="background:rgba(144,131,164);">
+      <h5 class="card-title"> <a  href="{% url 'grade1_course_list' %}">School Admin</a></h5>
+    </div>
+  </div>
+  <div class="card"  >
+    <div class="card-body"style="background:rgba(78,57,109);">
+      <h5 class="card-title"> <a  href="{% url 'subjects' %}">Subjects</a></h5>
+    </div>
+  </div>
+  <div class="card"  >
+    <div class="card-body" style="background:rgba(34,8,73);">
+        <h5 class="card-title"> <a  href="{% url 'grade1_course_list' %}">Authors</a></h5>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<style>
+ .page{
+  margin-top:1%;
+ }
+  .heading{
+    width:100%;
+    height:70px;
+    margin-left:0%;
+    box-shadow: 1px 1px 2px 2px black;
+    margin-top:-1%; 
+  }
+  .card-deck{
+    margin-left:20%;
+    margin-right:5%; 
+ 
+  
+  }
+  .card {
+    margin:2%; 
+    height:130px;
+    box-shadow: 1px 1px 2px 2px black;
+    color:white;
+  }
+  .card h5 a{
+    color:white;
+  }
+  h5 {
+    text-align:center;
+    margin-top:10%; 
+
+
+  }
+  .heading h5{
+    text-align:center;
+    margin-top:0%; 
+    
+
+  }
+ @media screen and (max-width: 420px) { /*According to mobile size you can change the width*/
+    .bt-contact{
+        padding-left: 100px;/* give some less px value */
+    }
+}
+.mytop-navi{
+      
+  letter-spacing: none;
+  margin: -0.5%;
+  padding-left: 20px;
+  width: 200px;
+  height: 130%;
+  background-color:rgb(70,32,125);
+  position: fixed;
+  list-style: none;
+
+     }
+.nav-list{
+  padding: 1px;
+  margin-top: 10px;
+  text-decoration: none;
+  margin-left:25%;
+  
+}
+.nav-list a{
+  display: block;
+  width: 150px;
+  color: white;
+  text-decoration: none;
+  font-size: medium;
+  margin-left:0%;
+
+ 
+}
+.nav-list a:hover{
+  background-color: white;
+  color:#422b72;
+  text-decoration: none;
+ 
+} 
+img{
+  border-radius: 50% ;
+  height:90px;
+  margin-left:15%;
+  width:90px;
+}
+
+
+
+</style>
+
+</body>
+</html>
+
+
+
+
+

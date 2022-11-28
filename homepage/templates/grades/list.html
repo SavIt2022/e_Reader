@@ -1,0 +1,167 @@
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Courses list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</head>
+<body>
+    {% for course in courses %}
+  <div class="container">
+   
+    <div class="row " >
+        <div class="col-md-3">
+            <div class="card body-session">
+                {% if course.course_image %}
+                <img src="{{ course.course_image.url}}" alt="{{ course.title}}" class="card-img-top">
+                {% else %}
+                <span class="text-muted">No PDF</span>
+                {% endif %}
+                <div class="card-body">
+                    <div class="card-title ">
+                        {{ course.title }}
+                    </div>
+
+                    {% if course.category == 'Free' %}
+                  
+
+                    <div class="card-text ">
+                    {% if course.profile %}
+                   <button> <a href="{{ course.profile.url }}" download class="btn-outline-primary" >Read</a></button>
+                    {% else %}
+
+                    <span class="text-muted">No PDF</span>
+                   
+                    {% endif %}
+                    </div>
+                </div>
+                   
+               
+                 <div class="card-text">
+                        {% if course.profile %}
+                     <button>   <a href="{{ course.profile.url }}" download class="btn-outline-sucess" target="_blank">Download</a></button>                     
+                        {% else %}
+                        <span class="text-muted">No PDF</span>
+                      
+                        {% endif %}
+                    </div>
+
+
+
+                    {% else %}
+                    <button class="buy"> <a href="{% url 'payments' %}">Buy Now</a></button>
+
+                    {% endif %}
+             </div>   
+
+        </div>
+     
+    </div>
+
+</div>
+</div>
+{% endfor%}
+
+
+
+</body>
+
+<style>
+@media screen and (max-width: 420px) { /*According to mobile size you can change the width*/
+    .bt-contact{
+        padding-left: 100px;/* give some less px value */
+    }
+}
+ 
+img{
+  height: 220px;
+  width: 295px;
+}
+
+.row{
+    float: left;
+    align-items: center;
+    
+   
+}
+.card{
+    width: 295px;
+    height: 410px;
+    margin: 3px 14.5px;
+    box-shadow:2px 8px 8px 2px rgb(70,32,125);
+    left: 40%;
+    padding-bottom: 20%;
+    margin-top: -30px;
+   
+}
+.card:hover {
+    background: #422b72 ;
+    color: white;
+}
+
+
+.card-title {
+    text-align: center;
+}
+
+button a  {
+    margin:10px ;
+    text-decoration: none;
+    display: block;
+    color: #422b72;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 2px 2px 2px 2px;
+  
+
+  
+}
+
+.buy{
+ 
+  margin-top: 40px;
+  
+    width: 55%;
+    height: 38%;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 18px;
+
+ 
+    text-decoration: none;
+    display: block;
+    color: rgb(70,32,125);
+    font-weight: 600;
+    font-size: 18px;
+    padding: 2px 2px 2px 2px;
+    top:700px;
+    background-color:white;
+    color: #422b72 !important;
+    box-shadow: 2px 2px 4px #422b72;
+   
+    
+}
+button a:hover{
+    
+    text-decoration: underline;
+}
+button{
+
+    border-radius: 25px;
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 2px 2px 4px #422b72;
+    color: white;
+}
+
+
+</style>
+
+</body>
+</html>

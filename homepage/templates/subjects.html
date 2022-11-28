@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+<body>
+    <div class="register">
+
+        <div class="card-deck">
+            <div class="card">
+              <div class="card-body" style="background-color:rgba(56,32,91);">
+                <h5 class="card-title" >grade1</h5>
+                <li class=" nav-list"><a href="{% url 'grade1_course_list' %}">View</a></li>
+                <li class=" nav-list"><a href="{% url 'add_grade1_course' %}">Add </a></li>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body"style="background-color:rgba(100,82,127);">
+                <h5 class="card-title" >Grade2</h5>
+                <li class=" nav-list"><a href="{% url 'grade2_course_list' %}">View</a></li>
+                <li class=" nav-list"><a href="{% url 'add_grade2_course' %}">Add </a></li>
+              </div>
+            </div>
+            <div class="card" >
+              <div class="card-body" style="background-color:rgba(70,32,125);">
+                <h5 class="card-title" >Grade3</h5>
+                        
+                <li class=" nav-list"><a href="{% url 'grade3_course_list' %}">View</a></li>
+                <li class=" nav-list"><a href="{% url 'add_grade3_course' %}">Add</a></li>
+              </div>
+            </div>
+          </div>
+          <div class="card-deck">
+            <div class="card">
+              <div class="card-body"   style="background:rgba(144,131,164);">
+                <h5 class="card-title">Grade4</h5>
+                <li class=" nav-list"><a href="{% url 'grade4_course_list' %}">View</a></li>
+                <li class=" nav-list"><a href="{% url 'add_grade4_course' %}">Add </a></li>
+            
+              </div>
+            </div>
+            <div class="card"  >
+              <div class="card-body"style="background:rgba(78,57,109);">
+                <h5 class="card-title">Grade5</h5>
+                <li class=" nav-list"><a href="{% url 'grade5_course_list' %}">View</a></li>
+                <li class=" nav-list"><a href="{% url 'add_grade5_course' %}">Add </a></li>
+            
+              </div>
+            </div>
+            <div class="card"  >
+              <div class="card-body" style="background:rgba(34,8,73);">
+                <h5 class="card-title" >Grade6</h5>
+                <li class=" nav-list"><a href="{% url 'grade6_course_list' %}">View</a></li>
+                <li class=" nav-list"><a href="{% url 'add_grade6_course' %}">Add</a></li>
+            
+              </div>
+            </div>
+       
+
+          
+        </div>
+
+
+        <div class="card-deck">
+            <div class="card">
+              <div class="card-body" style="background-color:rgba(56,32,91);">
+                <h5 class="card-title" >grade7</h5>
+        
+                <li class=" nav-list"><a href="{% url 'grade7_course_list' %}">View</a></li>
+                <li class=" nav-list"><a href="{% url 'add_grade7_course' %}">Add </a></li>
+           
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body"style="background-color:rgba(100,82,127);">
+                <h5 class="card-title" >Grade8</h5>
+              
+        <li class=" nav-list"><a href="{% url 'grade8_course_list' %}">View</a></li>
+        <li class=" nav-list"><a href="{% url 'add_grade8_course' %}">Add </a></li>
+    
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-body"style="background-color:rgba(100,82,127);">
+                  <h5 class="card-title" >Grade8</h5>
+                
+          <li class=" nav-list"><a href="{% url 'grade8_course_list' %}">View</a></li>
+          <li class=" nav-list"><a href="{% url 'add_grade8_course' %}">Add </a></li>
+      
+                </div>
+              </div>
+    </div>
+        <ul class="mytop-navi">
+        <li class=" nav-list"><a href="{% url 'courses_list' %}">Courses</a></li>
+        <li class=" nav-list"><a href="{% url 'add_course' %}">Add new course</a></li>    
+
+    
+  
+
+     
+
+
+</ul>
+    
+    
+    </div> 
+</body>
+</html>

@@ -35,7 +35,7 @@ def registerPage(request):
 
 def loginPage(request):
 	if request.user.is_authenticated:
-		return redirect('login')
+		return redirect('login_admin')
 	else:
 		if request.method == 'POST':
 			username = request.POST.get('username')
@@ -45,12 +45,50 @@ def loginPage(request):
 
 			if user is not None:
 				login(request, user)
-				return redirect('login')
+				return redirect('login_admin')
 			else:
 				messages.info(request, 'Username OR password is incorrect')
 
 		context = {}
 		return render(request, 'login.html', context)
+
+def student(request):
+	if request.user.is_authenticated:
+		return redirect('login_student')
+	else:
+		if request.method == 'POST':
+			username = request.POST.get('username')
+			password =request.POST.get('password')
+
+			user = authenticate(request, username=username, password=password)
+
+			if user is not None:
+				login(request, user)
+				return redirect('courses_list')
+			else:
+				messages.info(request, 'Username OR password is incorrect')
+
+		context = {}
+		return render(request, 'login.html', context)
+def school_admin(request):
+	if request.user.is_authenticated:
+		return redirect('login_student')
+	else:
+		if request.method == 'POST':
+			username = request.POST.get('username')
+			password =request.POST.get('password')
+
+			user = authenticate(request, username=username, password=password)
+
+			if user is not None:
+				login(request, user)
+				return redirect('school_admin_dashboard')
+			else:
+				messages.info(request, 'Username OR password is incorrect')
+
+		context = {}
+		return render(request, 'login.html', context)
+
 
 
 def logoutUser(request):

@@ -15,8 +15,8 @@ from rest_framework.views import APIView
 
 
 # Create your views here.
-def home(request):
-    return render (request,'home.html',{})
+def xhome(request):
+    return render (request,'xhome.html',{})
 def grades(request):
     return render (request,'grades.html',{})
 def subjects(request):

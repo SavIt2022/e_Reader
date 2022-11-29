@@ -32,8 +32,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [    
+INSTALLED_APPS = [   
+  
     'accounts',
+ 'account.apps.AccountConfig',
     'mpesa',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,10 +46,15 @@ INSTALLED_APPS = [
     'homepage',
     'phonenumber_field',
     'django_daraja',
-
+    'crispy_forms', 
+    'crispy_bootstrap5',
+   
+     
 
   
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -193,3 +200,5 @@ MPESA_INITIATOR_USERNAME = 'testapi'
 # Plaintext password for initiator (to be used in B2C, B2B, AccountBalance and TransactionStatusQuery Transactions)
 
 MPESA_INITIATOR_SECURITY_CREDENTIAL = 'Safaricom999!*!'
+LOGIN_REDIRECT_URL='/home'
+LOGOUT_REDIRECT_URL='/login'

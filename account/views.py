@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
-from .forms import RegisterForm, PostForm
+
+from accounts.forms import LoginForm
+from .forms import *
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User, Group
 
-from .models import Post
+from .models import *
 @login_required(login_url="/login")
 def home(request):
     posts = Post.objects.all()
@@ -49,6 +51,7 @@ def create_post(request):
         form = PostForm()
 
     return render(request, 'main/create_post.html', {"form": form})
+    
 
 
 def sign_up(request):
@@ -62,3 +65,28 @@ def sign_up(request):
         form = RegisterForm()
 
     return render(request, 'registration/sign_up.html', {"form": form})
+
+def register_user(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('/home')
+    else:
+        form = RegisterUser()
+
+    return render(request, 'main/register_user.html', {"form": form})
+
+def login_user(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('/home')
+    else:
+        form = RegisterUser()
+
+    return render(request, 'main/login_user.html', {"form": form})
+

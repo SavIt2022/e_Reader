@@ -2,10 +2,16 @@
 {% load crispy_forms_tags %} {% block content %}
 <form method="post">
   {% csrf_token %}{{form|crispy}}
-  <p>Don't have an account? Create one <a href="/admin/auth/user/add/">Here</a>!</p>
   <button type="submit" class="btn btn-success">Login</button>
+
+  {% comment %} <p>Don't have an account? Create one <a href="/login">Here</a>!</p> {% endcomment %}
+
 </form>
 {% endblock %}
 {% comment %} 
 https://www.youtube.com/watch?v=WuyKxdLcw3w 
 {% endcomment %}
+
+
+
+{% comment %} https://simpleisbetterthancomplex.com/tutorial/2017/02/18/how-to-create-user-sign-up-view.html#sign-up-with-profile-model {% endcomment %}

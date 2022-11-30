@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from accounts.forms import LoginForm
+
 from .forms import *
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import login, logout, authenticate
@@ -78,15 +78,5 @@ def register_user(request):
 
     return render(request, 'main/register_user.html', {"form": form})
 
-def login_user(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('/home')
-    else:
-        form = RegisterUser()
 
-    return render(request, 'main/login_user.html', {"form": form})
 

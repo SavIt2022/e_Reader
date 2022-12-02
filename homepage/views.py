@@ -18,6 +18,7 @@ from rest_framework.views import APIView
 
 def grades(request):
     return render (request,'grades.html',{})
+
 def subjects(request):
     return render (request,'subjects.html',{})
 

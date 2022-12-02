@@ -21,15 +21,15 @@
 </div>
 
 
-    <li class=" nav-list"><a href="{% url 'grade1_course_list' %}">Dashboard</a></li>
-    <li class=" nav-list"><a href="{% url 'add_grade1_course' %}">Grades</a></li>
+    <li class=" nav-list"><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+    <li class=" nav-list"><a href="{% url 'publisher_dashboard' %}">Add publisher</a></li>
 
-    <li class=" nav-list"><a href="{% url 'grade2_course_list' %}">Students</a></li>
-    <li class=" nav-list"><a href="{% url 'add_grade2_course' %}">Schools</a></li>
+    <li class=" nav-list"><a href="{% url 'school_admin_dashboard' %}">Add School Admin</a></li>
+    <li class=" nav-list"><a href="{% url 'courses_list' %}">Add Students</a></li>
     
-    <li class=" nav-list"><a href="{% url 'grade3_course_list' %}">Schools admins</a></li>
-    <li class=" nav-list"><a href="{% url 'add_grade3_course' %}">Subjects</a></li>
-    <li class=" nav-list"><a href="{% url 'add_grade3_course' %}">Authors</a></li>
+    {% comment %} <li class=" nav-list"><a href="{% url 'grade3_course_list' %}"></a></li>
+    <li class=" nav-list"><a href="{% url 'add_grade3_course' %}"></a></li>
+    <li class=" nav-list"><a href="{% url 'add_grade3_course' %}"></a></li> {% endcomment %}
 
 
 
@@ -45,34 +45,34 @@
 <div class="card-deck">
   <div class="card">
     <div class="card-body" style="background-color:rgba(56,32,91);">
-      <h5 class="card-title" >grades</h5>
+        <h5 class="card-title"> <a  href="{% url 'courses_list' %}">Grades</a></h5>
     </div>
   </div>
   <div class="card card1">
     <div class="card-body"style="background-color:rgba(100,82,127);">
-      <h5 class="card-title" >Students</h5>
+        <h5 class="card-title"> <a  href="{% url 'grade1_course_list' %}">Students</a></h5>
     </div>
   </div>
   <div class="card" >
     <div class="card-body" style="background-color:rgba(70,32,125);">
-      <h5 class="card-title" >School</h5>
+        <h5 class="card-title"> <a  href="{% url 'grade1_course_list' %}">School</a></h5>
     </div>
   </div>
 </div>
 <div class="card-deck">
   <div class="card">
     <div class="card-body"   style="background:rgba(144,131,164);">
-      <h5 class="card-title">Schools admins</h5>
+      <h5 class="card-title"> <a  href="{% url 'grade1_course_list' %}">School Admin</a></h5>
     </div>
   </div>
   <div class="card"  >
     <div class="card-body"style="background:rgba(78,57,109);">
-      <h5 class="card-title">Subjects</h5>
+      <h5 class="card-title"> <a  href="{% url 'subjects' %}">Subjects</a></h5>
     </div>
   </div>
   <div class="card"  >
     <div class="card-body" style="background:rgba(34,8,73);">
-      <h5 class="card-title" >Authors</h5>
+        <h5 class="card-title"> <a  href="{% url 'grade1_course_list' %}">Authors</a></h5>
     </div>
   </div>
 </div>
@@ -127,7 +127,7 @@
   letter-spacing: none;
   margin: -0.5%;
   padding-left: 20px;
-  width: 200px;
+  width: 250px;
   height: 130%;
   background-color:#422b72;
   position: fixed;
@@ -143,7 +143,7 @@
 }
 .nav-list a{
   display: block;
-  width: 150px;
+  width: 160px;
   color: white;
   text-decoration: none;
   font-size: medium;

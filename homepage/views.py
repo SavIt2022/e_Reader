@@ -15,7 +15,7 @@ from rest_framework.views import APIView
 
 
 # Create your views here.
-def xhome(request):
+def home(request):
     return render (request,'xhome.html',{})
 def grades(request):
     return render (request,'grades.html',{})
@@ -40,6 +40,13 @@ def courses_list(request):
     courses=Course.objects.all()
     return render(request,"courses_list.html",{ "courses":courses})
 
+def admin_dashboard(request):
+    return render(request,"admin_dashboard.html")
+def school_admin_dashboard(request):
+    return render(request,"school_admin_dashboard.html")
+def publisher_dashboard(request):
+    return render(request,"publisher_dashboard.html")
+
 def edit_course(request,id):  
     course=Course.objects.get(id=id)
     if request.method=="POST":
@@ -50,16 +57,8 @@ def edit_course(request,id):
         form=CourseAdditionForm(instance=course)
     return render(request,'edit_course.html',{"form":form})
 
-def admin_dashboard(request):
-    form=CourseAdditionForm()
-    return render(request,"admin_dashboard.html",{
-        "form":form,
-    })
-def school_admin_dashboard(request):
-    form=CourseAdditionForm()
-    return render(request,"school_admin_dashboard.html",{
-        "form":form,
-    })
+
+
 
 
 def course(request,id):

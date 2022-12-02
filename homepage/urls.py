@@ -11,13 +11,15 @@ appname="homepage"
 urlpatterns=[
    
     path('course-profile/<int:id>/',course,name='course-profile'),
-    path('xhome',xhome, name='xhome'),
+    path('',home, name='home'),
     path('grades',grades, name='grades'),
     path('payments',payments, name='payments'),
     path('subjects',subjects, name='subjects'),
     path('courses',courses_list, name='courses_list'),
     path('admin_dashboard',admin_dashboard, name='admin_dashboard'),
     path('school_admin_dashboard',school_admin_dashboard, name='school_admin_dashboard'),
+    path('publisher_dashboard',school_admin_dashboard, name='publisher_dashboard'),
+
     path('add',add_course,name='add_course'),
     path('edit/<int:id>/',edit_course, name='edit_course'),
 

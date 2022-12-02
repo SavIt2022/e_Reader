@@ -35,7 +35,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [   
   
     'accounts',
- 'account.apps.AccountConfig',
     'mpesa',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -202,3 +201,5 @@ MPESA_INITIATOR_USERNAME = 'testapi'
 MPESA_INITIATOR_SECURITY_CREDENTIAL = 'Safaricom999!*!'
 LOGIN_REDIRECT_URL='/home'
 LOGOUT_REDIRECT_URL='/login'
+
+AUTH_USER_MODEL = 'accounts.User'

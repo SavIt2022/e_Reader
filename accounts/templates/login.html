@@ -2,6 +2,7 @@
 {% load static %}
 <html lang="en">
   <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,22 +43,26 @@
               </span>
                 <form  method="post">
                     {% csrf_token %}
+                    <br>  <br>
                   <div class="form-group first">
                     <label for="username">Username</label>
                       {{ form.username }}
                   </div>
+                  <br>  <br>
                   <div class="form-group last mb-4">
                     <label for="username">Password</label>
                     {{ form.password }}
                   </div>
-
+                    <br>  <br>
                   <div class="d-flex mb-5 align-items-center">
                     <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
                       <input type="checkbox" checked="checked"/>
                       <div class="control__indicator"></div>
                     </label>
+                    <br>  <br>
                     <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
                   </div>
+                  <br>  <br>
 
                   <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-primary">
                 </form>
@@ -71,6 +76,42 @@
     </div>
   </div>
 
+  <style>
+    body{
+            
+        color:white;
+        background:#422b72;
+        padding-top:10%; 
+        font-family:Roboto;
+
+    } 
+    .content{
+        width: 500px;
+        height: 450px;
+        font-family:Roboto;
+
+        background: #f8f6f8; 
+        box-shadow: 2px 2px 4px black; 
+
+        padding: 10px;
+    
+        border-radius: 5px;
+        padding-top:3%; 
+        margin:5%; 
+        width:39%;
+        margin-top:5%; 
+     
+      height:400px;
+        border-radius:1%; 
+
+        background:white;
+        color:#422b72;
+        display:block;
+        margin:0 auto;
+        top:20%; 
+        
+    }
+  </style>
 
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>

@@ -11,7 +11,6 @@ appname="homepage"
 urlpatterns=[
    
     path('course-profile/<int:id>/',course,name='course-profile'),
-    path('',home, name='home'),
     path('grades',grades, name='grades'),
     path('payments',payments, name='payments'),
     path('subjects',subjects, name='subjects'),
